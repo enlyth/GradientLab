@@ -20,7 +20,6 @@ const routerModel = RouterModel.create()
 const history = syncHistoryWithStore(createBrowserHistory(), routerModel)
 const store = Store.create({ ...defaultStore, router: routerModel })
 
-
 class App extends Component {
   componentDidMount = () => {
     let snapShot
@@ -73,18 +72,17 @@ class App extends Component {
           <Route path="/settings" render={() => <Settings store={store} />} />
           <Route exact path="/" render={() => <Main store={store} />} />
           <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange
-        draggable
-        pauseOnHover
-      />
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange
+            draggable
+            pauseOnHover
+          />
         </div>
-
       </Router>
     )
   }
