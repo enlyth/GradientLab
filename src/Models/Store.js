@@ -41,7 +41,6 @@ const Store = types
       if (self.router.location.pathname === '/') {
         self.uiHidden = false
       }
-      
     },
     toggleUILock: () => {
       console.log('toggleUILock')
@@ -55,7 +54,7 @@ const Store = types
       self.uiHiddenLocked = false
       console.log('unlockUIHidden')
     },
-    setOutputCode: (code) => {
+    setOutputCode: code => {
       console.log('setOutputCode')
       self.outputCode = code
     }
