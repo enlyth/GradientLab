@@ -17,7 +17,7 @@ const Store = types
   .model('Store', {
     selected: types.optional(types.number, 0),
     gradients: types.array(Gradient),
-    uiHidden: types.optional(types.boolean, false),
+    uiHidden: types.optional(types.boolean, true),
     uiHiddenLocked: types.optional(types.boolean, false),
     router: RouterModel,
     outputCode: types.optional(types.string, defaultCode)

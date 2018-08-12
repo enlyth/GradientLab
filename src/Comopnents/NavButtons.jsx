@@ -17,13 +17,13 @@ const NavButtons = ({ store }) => {
       <button
         className={store.uiHiddenLocked ? 'activeButton' : ''}
         onPointerLeave={
-          store.router.location.pathname !== '/settings' && store.showUI
+          store.router.location.pathname === '/settings' ? () => {} : store.showUI
         }
         onPointerEnter={
-          store.router.location.pathname !== '/settings' ? () => {} : store.hideUI
+          store.router.location.pathname === '/settings' ? () => {} : store.hideUI
         }
         onPointerUp={
-          store.router.location.pathname !== '/settings' ? () => {} : store.toggleUILock
+          store.router.location.pathname === '/settings' ? () => {} : store.toggleUILock
         }
       >
         {store.uiHidden || store.uiHiddenLocked ? (

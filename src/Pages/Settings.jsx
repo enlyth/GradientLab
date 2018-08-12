@@ -18,6 +18,7 @@ export default class Settings extends React.Component {
 
   componentDidMount = () => {
     this.props.store.hideUI()
+    this.props.store.lockUIHidden()
   }
 
   render() {
