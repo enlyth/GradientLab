@@ -15,15 +15,21 @@ const NavButtons = ({ store }) => {
   return (
     <div style={{ display: 'inline-block' }}>
       <button
-        className={store.uiHiddenLocked ? 'activeButton' : ''}
+        className={store.uiHidden || store.uiHiddenLocked ? 'activeButton' : ''}
         onPointerLeave={
-          store.router.location.pathname === '/settings' ? () => {} : store.showUI
+          store.router.location.pathname !== '/'
+            ? () => {}
+            : store.showUI
         }
         onPointerEnter={
-          store.router.location.pathname === '/settings' ? () => {} : store.hideUI
+          store.router.location.pathname !== '/'
+            ? () => {}
+            : store.hideUI
         }
         onPointerUp={
-          store.router.location.pathname === '/settings' ? () => {} : store.toggleUILock
+          store.router.location.pathname !== '/'
+            ? () => {}
+            : store.toggleUILock
         }
       >
         {store.uiHidden || store.uiHiddenLocked ? (
@@ -35,7 +41,10 @@ const NavButtons = ({ store }) => {
       <button
         onPointerUp={() => {
           console.lo
-          window.localStorage.setItem('__GRADIENTLAB_STORE__', JSON.stringify(getSnapshot(store)))
+          window.localStorage.setItem(
+            '__GRADIENTLAB_STORE__',
+            JSON.stringify(getSnapshot(store))
+          )
           toast('Successfully saved.', {
             position: 'bottom-right'
           })
@@ -53,7 +62,10 @@ const NavButtons = ({ store }) => {
           <MdHome />
         </button>
       </Link>
-      <button className="github-button">
+      <button
+        onPointerUp={() => window.open('https://github.com/enlyth/GradientLab')}
+        className="github-button"
+      >
         <GoMarkGithub />
       </button>
     </div>

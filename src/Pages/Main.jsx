@@ -22,6 +22,7 @@ export default class Main extends React.Component {
   }
 
   componentDidMount = () => {
+    console.log('hi')
     this.props.store.showUI()
     this.props.store.unlockUIHidden()
   }
