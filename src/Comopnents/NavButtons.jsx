@@ -17,8 +17,8 @@ const NavButtons = ({ store }) => {
     <div className="ui-toggler" style={{ display: 'inline-block' }}>
       <button
         className={store.uiHidden || store.uiHiddenLocked ? 'activeButton' : ''}
-        onPointerLeave={store.showUI}
-        onPointerEnter={store.hideUI}
+        onMouseLeave={store.showUI}
+        onMouseEnter={store.hideUI}
       >
         {store.uiHidden || store.uiHiddenLocked ? (
           <MdVisibilityOff />
@@ -31,11 +31,15 @@ const NavButtons = ({ store }) => {
       </button>
       <button
         onPointerUp={() => {
-          console.lo
-          window.localStorage.setItem(
-            '__GRADIENTLAB_STORE__',
-            JSON.stringify(getSnapshot(store))
-          )
+          try {
+            window.localStorage.setItem(
+              '__GRADIENTLAB_STORE__',
+              JSON.stringify(getSnapshot(store))
+            )
+          } catch (err) {
+            console.error(err)
+          }
+
           toast('Successfully saved.', {
             position: 'bottom-right'
           })

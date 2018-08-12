@@ -27,16 +27,21 @@ class App extends Component {
       snapShot = JSON.parse(
         window.localStorage.getItem('__GRADIENTLAB_STORE__')
       )
+      if (snapShot) {
+        if (store.router.location.pathname === '/') {
+          snapShot.uiHidden = false
+          snapShot.uiHiddenLocked = false
+        } else {
+          snapShot.uiHidden = true
+          snapShot.uiHiddenLocked = true
+        }
+        applySnapshot(store, snapShot)
+      }
     } catch (err) {
       console.error('Could not load application state from snapshot.')
     }
 
-    if (snapShot) {
-      snapShot.uiHidden = false
-      snapShot.uiHiddenLocked = false
-      store.router.push('/')
-      applySnapshot(store, snapShot)
-    }
+
   }
 
   // handleMouseMove = e => {
