@@ -46,6 +46,7 @@ button {
   position: relative;
   transition: all .2s ease;
   color: #eee;
+  margin: 0em .25em;
 }
 
 button:hover {
@@ -71,6 +72,7 @@ input {
   font-family: 'Open Sans', sans-serif;
   background-color: rgba(255,255,255,0.75);
   color: #333;
+  margin: 0em .25em;
 }
 
 input:focus {
@@ -316,6 +318,6 @@ textarea:focus, textarea:active {
 .uiLock {
   position: absolute;
   top: 2.5em;
-  left: 0;
+  left: -0.25em;
 }
 
