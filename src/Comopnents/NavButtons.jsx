@@ -6,37 +6,28 @@ import {
   MdHome,
   MdSettings,
   MdVisibility,
-  MdVisibilityOff
+  MdVisibilityOff,
+  MdLock
 } from 'react-icons/md'
 import { GoMarkGithub } from 'react-icons/go'
 import { toast } from 'react-toastify'
 
 const NavButtons = ({ store }) => {
   return (
-    <div style={{ display: 'inline-block' }}>
+    <div className="ui-toggler" style={{ display: 'inline-block' }}>
       <button
         className={store.uiHidden || store.uiHiddenLocked ? 'activeButton' : ''}
-        onPointerLeave={
-          store.router.location.pathname !== '/'
-            ? () => {}
-            : store.showUI
-        }
-        onPointerEnter={
-          store.router.location.pathname !== '/'
-            ? () => {}
-            : store.hideUI
-        }
-        onPointerUp={
-          store.router.location.pathname !== '/'
-            ? () => {}
-            : store.toggleUILock
-        }
+        onPointerLeave={store.showUI}
+        onPointerEnter={store.hideUI}
       >
         {store.uiHidden || store.uiHiddenLocked ? (
           <MdVisibilityOff />
         ) : (
           <MdVisibility />
         )}
+        <button onPointerUp={store.toggleUILock} className="uiLock">
+          <MdLock />
+        </button>
       </button>
       <button
         onPointerUp={() => {
@@ -52,13 +43,13 @@ const NavButtons = ({ store }) => {
       >
         <MdSave />
       </button>
-      <Link onPointerUp={() => store.lockUIHidden()} to="/settings">
-        <button>
+      <Link to="/settings">
+        <button onPointerUp={() => store.lockUIHidden()}>
           <MdSettings />
         </button>
       </Link>
-      <Link onPointerUp={() => store.unlockUIHidden()} to="/">
-        <button>
+      <Link to="/">
+        <button onPointerUp={() => store.unlockUIHidden()}>
           <MdHome />
         </button>
       </Link>

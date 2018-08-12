@@ -38,7 +38,10 @@ const Store = types
     },
     showUI: () => {
       console.log('showUI')
-      self.uiHidden = false
+      if (self.router.location.pathname === '/') {
+        self.uiHidden = false
+      }
+      
     },
     toggleUILock: () => {
       console.log('toggleUILock')

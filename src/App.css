@@ -43,10 +43,9 @@ button {
   background-color: rgba(0, 0, 0, 0.436);
   border: none;
   border-radius: 0px;
- 
+  position: relative;
   transition: all .2s ease;
   color: #eee;
-  margin: .25em .25em;
 }
 
 button:hover {
@@ -167,22 +166,16 @@ svg {
 }
 
 .ui-toggler {
-  width: 64px;
-  background: rgba(255,255,255,0.2);
-  margin: auto;
-  display: inline-block;
-  padding: .5em;
-  font-size: .9em;
-  cursor: default;
-  border-radius: 0px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
-  transition: background-color 0.25s;
   color: #fff;
 }
 
-.ui-toggler:hover {
-  background-color: rgba(255,255,255,0.1);
-  color: rgba(0,0,0,0.75);
+
+.ui-toggler>button>.uiLock {
+  display: none;
+}
+
+.ui-toggler>button:hover>.uiLock {
+  display: block;
 }
 
 .codeBlock {
@@ -319,3 +312,10 @@ textarea:focus, textarea:active {
 #root > div > div.settings > p:nth-child(4) > code {
   word-break: break-all;
 }
+
+.uiLock {
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+}
+
