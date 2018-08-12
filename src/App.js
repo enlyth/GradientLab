@@ -32,8 +32,10 @@ class App extends Component {
       console.error('Could not load application state from snapshot.')
     }
 
-    if (snapShot && snapShot.router && snapShot.router.location) {
-      store.router.push(snapShot.router.location.pathname)
+    if (snapShot) {
+      snapShot.uiHidden = false
+      snapShot.uiHiddenLocked = false
+      store.router.push('/')
       applySnapshot(store, snapShot)
     }
   }
