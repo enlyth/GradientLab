@@ -1,0 +1,321 @@
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+html, body, #root, .App {
+
+   display: flex;
+  flex-direction: column;
+  height: 100vh;
+    background-color: #333;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App-logo {
+  font-family: 'Montserrat', cursive;
+  margin: auto;
+  display: inline-block;
+  padding: .5em;
+  font-size: .9em;
+  cursor: default;
+  transition: background-color 0.25s;
+  color: #fff;
+  user-select: none;
+}
+
+
+.header-top {
+  background-color: #222;/* #3065ff;*/
+  text-align: center;
+  padding: .75em .25em .75em .25em;
+
+  z-index: 999;
+}
+
+button {
+  font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+  padding: .6em 1.2em;
+  background-color: rgba(0, 0, 0, 0.436);
+  border: none;
+  border-radius: 0px;
+ 
+  transition: all .2s ease;
+  color: #eee;
+  margin: .25em .25em;
+}
+
+button:hover {
+  background-color: rgb(59, 110, 250);
+
+}
+
+button:focus {
+  outline: none;
+}
+
+form {
+  display: inline-block;
+  
+}
+
+input {
+  width: 52px;
+  border-radius: 0px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px !important;
+  padding: .6em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgba(255,255,255,0.75);
+  color: #333;
+}
+
+input:focus {
+  outline: none;
+}
+
+.sketch-picker {
+  display: inline-block;
+  margin: 0em 1em 1em 1em;
+  background-color: rgba(255,255,255,0.75) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px !important;
+  border-radius: 0px !important;
+}
+
+.colorBlocks {
+  margin: 0em 1em 1em 1em;
+  background-color: rgba(255,255,255,0.75);
+  border-radius: 0px;
+  padding: .5em .5em .2em .5em;
+  width: auto;
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+}
+
+.savedGradients {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  border-radius: 0px;
+  padding: .25em .5em 0em .5em;
+  margin: 1em auto;
+
+}
+.savedGradientCube {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  transition: transform 0.1s ease;
+
+}
+
+.savedGradientCube:hover {
+  transition: transform 0.1s ease;
+  transform: scale(1.1);
+
+}
+
+.selected {
+  position: relative;
+  box-shadow: rgba(255, 255, 255, 1) 0px 0px 0px 2px !important;
+}
+
+
+/* Triangles */
+@keyframes example {
+  0% {top: -28px;}
+  100% {top: -16px;}
+}
+
+@keyframes exe {
+  0% {transform: scale(1.4)}
+  100% {transform: scale(1)}
+}
+
+.savedGradientCube:hover::after {
+  position: absolute;
+  content:'';
+  top: -24px;
+  right: 11px;
+  animation: 1s infinite alternate example;
+  border-bottom: solid 12px transparent;
+  border-right: solid 12px transparent;
+  border-left: solid 12px transparent;
+  border-top: solid 12px rgba(255, 255, 255, .3);
+}
+
+.selected::after, .selected:hover::after {
+  position: absolute;
+  content:'';
+  bottom: 0px;
+  right: 5.5px;
+  border-bottom: solid 16px rgba(255, 255, 255, .6);
+  border-right: solid 16px transparent;
+  border-left: solid 16px transparent;
+  border-top: solid 16px transparent;
+  animation-name: exe;
+  animation-duration: .2s;
+  animation-iteration-count: 1;
+}
+
+
+
+svg {
+  fill: white;
+}
+
+.ui-toggler {
+  width: 64px;
+  background: rgba(255,255,255,0.2);
+  margin: auto;
+  display: inline-block;
+  padding: .5em;
+  font-size: .9em;
+  cursor: default;
+  border-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  transition: background-color 0.25s;
+  color: #fff;
+}
+
+.ui-toggler:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: rgba(0,0,0,0.75);
+}
+
+.codeBlock {
+  background-color: rgba(255,255,255,0.75);
+  display: inline-block;
+  padding: 1em;
+  margin: auto;
+  border-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  color: #333;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "HeaderLogo HeaderRight";
+}
+
+.HeaderRight { grid-area: HeaderRight; }
+
+.HeaderLogo { grid-area: HeaderLogo; }
+
+.HeaderMiddle { grid-area: HeaderMiddle; }
+
+.activeButton {
+  background-color: #3065ff; 
+}
+
+#settings-code-output-editor > div.ace_scroller > div {
+  background-color: #171717;
+}
+.container-controls {
+
+  position: relative;
+
+}
+
+.controls {
+  background-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: auto;
+  text-align: center;
+  margin: auto;
+  height: auto;
+  width: 100%;
+  padding: .6em 0em .6em 0em;
+}
+code {
+  font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+}
+.header-controls {
+  background-color: #333;
+
+}
+
+#contentBlock {
+  flex: 1;
+  padding-top: 6em;
+}
+
+.settings {
+  color: #eee;
+  background-color: #242424;
+  text-align: left;
+  padding: 2em;
+
+  max-width: 640px;
+  margin: auto;
+  margin-top: 2em;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  margin-top: 0em;
+  margin-bottom: .5em;
+}
+
+h4 {
+  color: #aaa;
+}
+textarea {
+  background-color: #222;
+  color:white;
+  width: 640px;
+  height: auto;
+}
+
+textarea:focus, textarea:active {
+  outline: black;
+  border: 1px black;
+}
+
+.Toastify__toast {
+  background-color: #222 !important;
+}
+.Toastify__toast-body {
+  color: #eee !important;
+}
+
+.Toastify__close-button--default {
+  color: #fff !important;
+  opacity: 0.8 !important;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+.Toastify__progress-bar--default {
+  background: linear-gradient(to right,#00ff87,#00d1ff,#de00ff) !important;
+}
+
+
+.github-button {
+  position: fixed;
+  bottom: 1.5em;
+  left: 1.5em;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  text-align: center;
+  padding: 0em;
+  padding-top: .2em;
+}
+
+#root > div > div.grid-container.header-top > div.HeaderRight > div > button.github-button > svg {
+  transform: scale(2);
+}
+
+
+
+#root > div > div.settings > p:nth-child(4) > code {
+  word-break: break-all;
+}
