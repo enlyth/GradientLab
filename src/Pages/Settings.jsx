@@ -54,9 +54,7 @@ export default class Settings extends React.Component {
               codeBeforeEval += store.outputCode + '})'
               try {
                 const builtFunction = eval(codeBeforeEval)
-                console.log(builtFunction)
                 const result = builtFunction(chroma, store)
-                console.log('result: ', result)
                 return result
               } catch (err) {
                 return err.toString()
