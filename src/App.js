@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { onSnapshot, applySnapshot } from 'mobx-state-tree'
+import { applySnapshot } from 'mobx-state-tree'
 import chroma from 'chroma-js'
 import { Router } from 'react-router'
 import { Route } from 'react-router-dom'
@@ -40,8 +40,6 @@ class App extends Component {
     } catch (err) {
       console.error('Could not load application state from snapshot.')
     }
-
-
   }
 
   // handleMouseMove = e => {
@@ -55,14 +53,6 @@ class App extends Component {
       .scale(selected.colors)
       .mode(selected.mode)
       .colors(selected.grades)
-
-    const backgroundStyle = {
-      background: `linear-gradient(${
-        selected.degrees.length === 0 ? '160' : selected.degrees
-      }deg,${linearGradient.toString()})`,
-      width: '100%'
-    }
-
     const visibility =
       store.uiHidden || store.uiHiddenLocked ? 'hidden' : 'visible'
 

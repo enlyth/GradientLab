@@ -188,6 +188,7 @@ svg {
   border-radius: 0px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
   color: #333;
+  max-width: 640px;
 }
 
 .grid-container {
@@ -319,3 +320,7 @@ textarea:focus, textarea:active {
   left: -0.25em;
 }
 
+.copy-button {
+  display: block;
+  margin: 1em auto;
+}

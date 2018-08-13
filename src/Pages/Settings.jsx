@@ -1,9 +1,4 @@
-import React, { Component } from 'react'
-import Editor from 'react-simple-code-editor'
-import { highlight, languages } from 'prismjs/components/prism-core'
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import { observer } from 'mobx-react'
+import React from 'react'
 import chroma from 'chroma-js'
 import { ObjectInspector } from 'react-inspector'
 import AceEditor from 'react-ace'
@@ -12,9 +7,6 @@ import 'brace/mode/javascript'
 import 'brace/theme/pastel_on_dark'
 
 export default class Settings extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount = () => {
     this.props.store.hideUI()

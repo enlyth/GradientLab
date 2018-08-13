@@ -12,7 +12,6 @@
     "mobx-state-tree": "^3.0.2",
     "mst-react-router": "^2.0.0",
     "popmotion": "^8.3.3",
-    "prismjs": "^1.15.0",
     "react": "^16.4.1",
     "react-ace": "^6.1.4",
     "react-color": "^2.14.1",
@@ -24,7 +23,6 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "react-simple-code-editor": "^0.5.0",
     "react-toastify": "^4.1.0"
   },
   "scripts": {

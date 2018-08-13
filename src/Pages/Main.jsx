@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import chroma from 'chroma-js'
 import posed from 'react-pose'
 import ColorCube from '../Comopnents/ColorCube'
 import ColorPickers from '../Comopnents/ColorPickers'
 import GradientSelection from '../Comopnents/GradientSelection'
 import CodeOutput from '../Comopnents/CodeOutput'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { toast } from 'react-toastify'
+import { MdContentCopy } from 'react-icons/md'
 
 export const AnimatedGroup = posed.div({
-  visible: { y: '0%', delayChildren: 100, staggerChildren: 150 },
-  hidden: { y: '10%' }
+  visible: { delayChildren: 100, staggerChildren: 150 }
 })
 
 export const AnimatedDiv = posed.div({
@@ -17,12 +19,7 @@ export const AnimatedDiv = posed.div({
 })
 
 export default class Main extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount = () => {
-    console.log('hi')
     this.props.store.showUI()
     this.props.store.unlockUIHidden()
   }
@@ -59,6 +56,17 @@ export default class Main extends React.Component {
           </AnimatedDiv>
           <AnimatedDiv pose={visibility}>
             <CodeOutput store={store} />
+            <CopyToClipboard
+              className="copy-button"
+              text={backgroundStyle.background}
+              onCopy={() =>
+                toast('Copied to clipboard!', { position: 'bottom-right' })
+              }
+            >
+              <button>
+                <MdContentCopy /> Copy to clipboard
+              </button>
+            </CopyToClipboard>
           </AnimatedDiv>
           <AnimatedDiv>
             <GradientSelection store={store} selected={selected} />
