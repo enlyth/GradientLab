@@ -4,7 +4,7 @@ GradientLab is a gradient picker made with together with React and [mobx-state-t
 
 Please note this is currently work in progress, and far from a final version.
 
-At hthe moment, it focuses on LAB and LCH color spaces for interpolation, as they generally look the best to us aesthetically. See the following article for a bit more information:\
+At the moment, it focuses on LAB and LCH color spaces for interpolation, as they generally look the best to us aesthetically. See the following article for a bit more information:\
 https://www.vis4.net/blog/2011/12/avoid-equidistant-hsv-colors/
 
 ## Screenshots
