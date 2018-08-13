@@ -7,6 +7,8 @@ Please note this is currently work in progress, and far from a final version.
 At the moment, it focuses on LAB and LCH color spaces for interpolation, as they generally look the best to us aesthetically. See the following article for a bit more information:\
 https://www.vis4.net/blog/2011/12/avoid-equidistant-hsv-colors/
 
+It features the option to define your own output function written in javascript, which will be evaluated and shown on the UI. The application store and [chroma-js](https://github.com/gka/chroma.js/) objects are exposed in this function.
+ 
 ## Screenshots
 ![Home](/media/screenshot-0.jpg)
 
