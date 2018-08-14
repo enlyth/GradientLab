@@ -42,12 +42,12 @@ class App extends Component {
     }
   }
 
-  // handleMouseMove = e => {
-  //   this.setState({ mousePosition: { x: e.screenX, y: e.screenY } })
-  // }
-
   render() {
-    // const { location, push, goBack } = this.props.store.router
+
+    // TODO: The following lines need to be removed
+    //       but when done at the moment this stop the app from working
+    //      probably because of observer
+
     const selected = store.selectedGradient
     const linearGradient = chroma
       .scale(selected.colors)

@@ -24,13 +24,26 @@ const Store = types
   })
   .views(self => ({
     get selectedGradient () {
-      const gradient = self.gradients[self.selected]
-      return !gradient ? null : gradient
+      if (self.selected >= self.gradients.length) {
+        return self.gradients[self.gradients.length - 1]
+      } else {
+        return self.gradients[self.selected]
+      }
     }
   }))
   .actions(self => ({
     selectGradient: index => {
       self.selected = index
+    },
+    addGradient: () => {
+      self.gradients.push({
+        colors: ['#ffffff', '#000000'],
+        grades: 2,
+        mode: 'lch'
+      })
+    },
+    deleteSelectedGradient: () => {
+      self.gradients.length > 1 && self.gradients.splice(self.selected, 1)
     },
     hideUI: () => {
       console.log('hideUI')

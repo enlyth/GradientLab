@@ -7,7 +7,7 @@ import {
   MdSettings,
   MdVisibility,
   MdVisibilityOff,
-  MdLock
+  /* MdLock */
 } from 'react-icons/md'
 import { GoMarkGithub } from 'react-icons/go'
 import { toast } from 'react-toastify'
@@ -17,17 +17,13 @@ const NavButtons = ({ store }) => {
     <div className="ui-toggler" style={{ display: 'inline-block' }}>
       <button
         className={store.uiHidden || store.uiHiddenLocked ? 'activeButton' : ''}
-        onMouseLeave={store.showUI}
-        onMouseEnter={store.hideUI}
+        onPointerUp={store.toggleUILock}
       >
         {store.uiHidden || store.uiHiddenLocked ? (
           <MdVisibilityOff />
         ) : (
           <MdVisibility />
         )}
-        <button onPointerUp={store.toggleUILock} className="uiLock">
-          <MdLock />
-        </button>
       </button>
       <button
         onPointerUp={() => {

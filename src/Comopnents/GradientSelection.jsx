@@ -1,17 +1,29 @@
 import React from 'react'
 import SavedGradient from './SavedGradient'
+import { MdAdd, MdDelete } from 'react-icons/md'
+import { observer } from 'mobx-react'
 
-export default ({store, selected}) => {
+const GradientSelection = ({ store, selected }) => {
   return (
-    <div className="savedGradients" style={{ display: 'inline-block' }}>
-      {store.gradients.map((key, index) => (
-        <SavedGradient
-          isSelected={selected === key}
-          onClickHandler={() => store.selectGradient(index)}
-          gradient={key}
-          key={index}
-        />
-      ))}
+    <div style={{ display: 'inline-block' }}>
+      <div className="savedGradients">
+        {store.gradients.map((key, index) => (
+          <SavedGradient
+            isSelected={selected === key}
+            onClickHandler={() => store.selectGradient(index)}
+            gradient={key}
+            key={index}
+          />
+        ))}
+      </div>
+      <button className="saved-gradients-button" onPointerUp={store.addGradient}>
+        <MdAdd />
+      </button>
+      <button className="saved-gradients-button" onPointerUp={store.deleteSelectedGradient}>
+        <MdDelete />
+      </button>
     </div>
   )
 }
+
+export default observer(GradientSelection)

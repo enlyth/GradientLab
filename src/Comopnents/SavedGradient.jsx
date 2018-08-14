@@ -1,5 +1,6 @@
 import React from 'react'
 import chroma from 'chroma-js'
+import { observer } from 'mobx-react'
 
 const SavedGradient = ({ gradient, isSelected, onClickHandler, color }) => {
   const linearGradient = chroma
@@ -30,4 +31,4 @@ const SavedGradient = ({ gradient, isSelected, onClickHandler, color }) => {
   )
 }
 
-export default SavedGradient
+export default observer(SavedGradient)

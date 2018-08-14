@@ -106,10 +106,11 @@ input:focus {
   margin: 1em auto;
 
 }
-.savedGradientCube {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
-  transition: transform 0.1s ease;
 
+.saved-gradients-button {
+  padding: .45em .75em;
+  margin: .4em;
+  float: right;
 }
 
 .savedGradientCube:hover {
@@ -165,6 +166,8 @@ input:focus {
 
 svg {
   fill: white;
+  height: 1.2em;
+  width: 1.2em;
 }
 
 .ui-toggler {
