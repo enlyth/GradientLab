@@ -44,7 +44,8 @@ https://www.vis4.net/blog/2011/12/avoid-equidistant-hsv-colors/
 • [pose](https://popmotion.io/pose/) for animations\
 • [chroma.js](https://github.com/gka/chroma.js/) for colour calculations\
 • [react-toastify](https://github.com/fkhadra/react-toastify) for notifications\
-• [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard)
+• [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard)\
+• [react-color](https://casesandberg.github.io/react-color/)
 
 ## License
 MIT
