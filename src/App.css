@@ -162,8 +162,6 @@ input:focus {
   animation-iteration-count: 1;
 }
 
-
-
 svg {
   fill: white;
   height: 1.2em;
@@ -309,11 +307,11 @@ textarea:focus, textarea:active {
   padding-top: .2em;
 }
 
-#root > div > div.grid-container.header-top > div.HeaderRight > div > button.github-button > svg {
+button.github-button > svg {
   transform: scale(2);
 }
 
-#root > div > div.settings > p:nth-child(4) > code {
+code {
   word-break: break-all;
 }
 

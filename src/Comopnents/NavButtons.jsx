@@ -6,7 +6,7 @@ import {
   MdHome,
   MdSettings,
   MdVisibility,
-  MdVisibilityOff,
+  MdVisibilityOff
   /* MdLock */
 } from 'react-icons/md'
 import { GoMarkGithub } from 'react-icons/go'
@@ -53,12 +53,11 @@ const NavButtons = ({ store }) => {
           <MdHome />
         </button>
       </Link>
-      <button
-        onPointerUp={() => window.open('https://github.com/enlyth/GradientLab')}
-        className="github-button"
-      >
-        <GoMarkGithub />
-      </button>
+      <a href="https://github.com/enlyth/GradientLab" target="_blank">
+        <button className="github-button">
+          <GoMarkGithub />
+        </button>
+      </a>
     </div>
   )
 }

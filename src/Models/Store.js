@@ -46,29 +46,23 @@ const Store = types
       self.gradients.length > 1 && self.gradients.splice(self.selected, 1)
     },
     hideUI: () => {
-      console.log('hideUI')
       self.uiHidden = true
     },
     showUI: () => {
-      console.log('showUI')
       if (self.router.location.pathname === '/') {
         self.uiHidden = false
       }
     },
     toggleUILock: () => {
-      console.log('toggleUILock')
       self.uiHiddenLocked = !self.uiHiddenLocked
     },
     lockUIHidden: () => {
       self.uiHiddenLocked = true
-      console.log('lockUIHidden')
     },
     unlockUIHidden: () => {
       self.uiHiddenLocked = false
-      console.log('unlockUIHidden')
     },
     setOutputCode: code => {
-      console.log('setOutputCode')
       self.outputCode = code
     }
   }))
