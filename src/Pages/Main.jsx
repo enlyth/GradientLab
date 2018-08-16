@@ -8,6 +8,7 @@ import CodeOutput from '../Components/CodeOutput'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
 import { MdContentCopy } from 'react-icons/md'
+import { observer } from 'mobx-react'
 
 export const AnimatedGroup = posed.div({
   visible: { delayChildren: 100, staggerChildren: 150 }
@@ -18,7 +19,7 @@ export const AnimatedDiv = posed.div({
   hidden: { opacity: 0, y: 32 }
 })
 
-export default class Main extends React.Component {
+class Main extends React.Component {
   componentDidMount = () => {
     this.props.store.showUI()
     this.props.store.unlockUIHidden()
@@ -76,3 +77,5 @@ export default class Main extends React.Component {
     )
   }
 }
+
+export default observer(Main)

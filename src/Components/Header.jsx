@@ -2,7 +2,7 @@ import React from 'react'
 import NavButtons from './NavButtons'
 import Logo from '../logo.png'
 
-export default ({ store }) => {
+const Header = ({ store }) => {
   return (
     <div className="grid-container header-top">
       <div className="HeaderLogo">
@@ -17,3 +17,5 @@ export default ({ store }) => {
     </div>
   )
 }
+
+export default Header

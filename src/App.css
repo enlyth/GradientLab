@@ -164,8 +164,6 @@ input:focus {
 
 svg {
   fill: white;
-  height: 1.2em;
-  width: 1.2em;
 }
 
 .ui-toggler {
@@ -294,7 +292,6 @@ textarea:focus, textarea:active {
   background: linear-gradient(to right,#00ff87,#00d1ff,#de00ff) !important;
 }
 
-
 .github-button {
   position: fixed;
   bottom: 1.5em;
@@ -308,7 +305,7 @@ textarea:focus, textarea:active {
 }
 
 button.github-button > svg {
-  transform: scale(2);
+  transform: scale(1.9);
 }
 
 code {

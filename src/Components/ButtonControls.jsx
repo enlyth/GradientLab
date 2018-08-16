@@ -1,16 +1,8 @@
 import React from 'react'
 import DegreeInput from './DegreeInput'
 import { MdLibraryAdd, MdIndeterminateCheckBox } from 'react-icons/md'
-import { spring } from 'popmotion'
-import posed from 'react-pose'
 
-export default ({ store, gradient }) => {
-  const AnimatedSpring = posed.div({
-    draggable: true,
-    dragEnd: {
-      transition: spring
-    }
-  })
+const ButtonControls = ({ store, gradient }) => {
   return (
     <div>
       <button
@@ -33,20 +25,9 @@ export default ({ store, gradient }) => {
       </button>
       <button onPointerUp={gradient.addColor}>Add Color</button>
       <button onPointerUp={gradient.removeColor}>Remove Color</button>
-      <DegreeInput gradient={gradient} />
-      <AnimatedSpring
-        style={{
-          width: 0,
-          height: 0,
-          borderRadius: '50%',
-          backgroundColor: '#4065df',
-          zIndex: 1200,
-          margin: 0,
-          padding: 0,
-          display: 'inline-block'
-        }}
-
-      />
+      <DegreeInput store={store} />
     </div>
   )
 }
+
+export default ButtonControls

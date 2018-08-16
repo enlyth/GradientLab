@@ -1,16 +1,19 @@
 import React from 'react'
+import { observer } from 'mobx-react'
 
-export default ({gradient}) => {
+const DegreeInput = ({store}) => {
   return (
     <form>
       <label>
         <input
           type="number"
-          value={gradient.degrees}
-          onChange={event => gradient.changeDegrees(event.target.value)}
+          value={store.selectedGradient.degrees}
+          onChange={event => store.selectedGradient.changeDegrees(event.target.value)}
           name="name"
         />
       </label>
     </form>
   )
 }
+
+export default observer(DegreeInput)
