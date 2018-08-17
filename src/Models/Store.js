@@ -37,11 +37,10 @@ const Store = types
       self.selected = index
     },
     reset: () => {
-      const snapShot = JSON.parse(
-        window.localStorage.getItem('__GRADIENTLAB_STORE__')
-      )
-      Object.assign(snapShot, {...defaultStore, uiHidden: true, uiHiddenLocked: true, selected: 0})
-      applySnapshot(self, snapShot)
+      /* I know this is a bit hacky, but has to do for now */
+      const current = JSON.parse(JSON.stringify(self))
+      Object.assign(current, {...defaultStore, uiHidden: true, uiHiddenLocked: true, selected: 0})
+      applySnapshot(self, current)
     },
     addGradient: () => {
       self.gradients.push({
