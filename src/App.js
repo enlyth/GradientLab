@@ -43,11 +43,7 @@ class App extends Component {
   }
 
   render() {
-
-    // TODO: The following lines need to be removed
-    //       but when done at the moment this stop the app from working
-    //      probably because of observer
-
+    
     const selected = store.selectedGradient
     const linearGradient = chroma
       .scale(selected.colors)

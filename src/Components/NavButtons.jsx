@@ -36,7 +36,7 @@ const NavButtons = ({ store }) => {
             console.error(err)
           }
 
-          toast('Successfully saved.', {
+          toast('Saved', {
             position: 'bottom-right'
           })
         }}

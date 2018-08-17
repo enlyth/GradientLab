@@ -3,12 +3,11 @@ import chroma from 'chroma-js'
 import { ObjectInspector } from 'react-inspector'
 import AceEditor from 'react-ace'
 import { observer } from 'mobx-react'
-
+import { toast } from 'react-toastify'
 import 'brace/mode/javascript'
 import 'brace/theme/pastel_on_dark'
 
 class Settings extends React.Component {
-
   componentDidMount = () => {
     this.props.store.hideUI()
     this.props.store.lockUIHidden()
@@ -65,7 +64,17 @@ class Settings extends React.Component {
         </div>
         <br />
         <div>
-          <h4>Application State</h4>
+          <h4>
+            Application State{' '}
+            <button
+              onPointerUp={() => {
+                toast('Reset all gradients', { position: 'bottom-right' })
+                store.reset()
+              }}
+            >
+              Reset
+            </button>
+          </h4>
           <ObjectInspector theme="chromeDark" data={store.toJSON()} />
         </div>
       </div>
@@ -74,4 +83,3 @@ class Settings extends React.Component {
 }
 
 export default observer(Settings)
-

@@ -1,8 +1,9 @@
-import { types } from 'mobx-state-tree'
+import { types, applySnapshot } from 'mobx-state-tree'
 import Gradient from './Gradient'
 import { RouterModel } from 'mst-react-router'
+import defaultStore from '../defaultStore'
 
-const defaultCode = `const selected = store.selectedGradient
+export const defaultCode = `const selected = store.selectedGradient
 const linearGradient = chroma
   .scale(selected.colors)
   .mode(selected.mode)
@@ -34,6 +35,13 @@ const Store = types
   .actions(self => ({
     selectGradient: index => {
       self.selected = index
+    },
+    reset: () => {
+      const snapShot = JSON.parse(
+        window.localStorage.getItem('__GRADIENTLAB_STORE__')
+      )
+      Object.assign(snapShot, {...defaultStore, uiHidden: true, uiHiddenLocked: true})
+      applySnapshot(self, snapShot)
     },
     addGradient: () => {
       self.gradients.push({

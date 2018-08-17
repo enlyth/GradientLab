@@ -61,7 +61,7 @@ class Main extends React.Component {
               className="copy-button"
               text={backgroundStyle.background}
               onCopy={() =>
-                toast('Copied to clipboard!', { position: 'bottom-right' })
+                toast('Copied to clipboard', { position: 'bottom-right' })
               }
             >
               <button>
