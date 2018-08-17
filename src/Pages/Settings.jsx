@@ -2,11 +2,12 @@ import React from 'react'
 import chroma from 'chroma-js'
 import { ObjectInspector } from 'react-inspector'
 import AceEditor from 'react-ace'
+import { observer } from 'mobx-react'
 
 import 'brace/mode/javascript'
 import 'brace/theme/pastel_on_dark'
 
-export default class Settings extends React.Component {
+class Settings extends React.Component {
 
   componentDidMount = () => {
     this.props.store.hideUI()
@@ -71,3 +72,6 @@ export default class Settings extends React.Component {
     )
   }
 }
+
+export default observer(Settings)
+

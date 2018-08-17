@@ -1,7 +1,7 @@
 import React from 'react'
 import chroma from 'chroma-js'
 
-export default ({ store }) => (
+const CodeOutput = ({ store }) => (
   <div className="codeBlock">
     <code style={{ wordBreak: 'break-all' }}>
       {' '}
@@ -18,3 +18,5 @@ export default ({ store }) => (
     </code>
   </div>
 )
+
+export default CodeOutput
