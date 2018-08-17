@@ -40,7 +40,7 @@ const Store = types
       const snapShot = JSON.parse(
         window.localStorage.getItem('__GRADIENTLAB_STORE__')
       )
-      Object.assign(snapShot, {...defaultStore, uiHidden: true, uiHiddenLocked: true})
+      Object.assign(snapShot, {...defaultStore, uiHidden: true, uiHiddenLocked: true, selected: 0})
       applySnapshot(self, snapShot)
     },
     addGradient: () => {
