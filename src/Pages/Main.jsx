@@ -9,6 +9,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
 import { MdContentCopy } from 'react-icons/md'
 import { observer } from 'mobx-react'
+import evaluate from '../Utility/evaluate';
 
 export const AnimatedGroup = posed.div({
   visible: { delayChildren: 100, staggerChildren: 150 }
@@ -59,7 +60,7 @@ class Main extends React.Component {
             <CodeOutput store={store} />
             <CopyToClipboard
               className="copy-button"
-              text={backgroundStyle.background}
+              text={evaluate(store, chroma)}
               onCopy={() =>
                 toast('Copied to clipboard', { position: 'bottom-right' })
               }

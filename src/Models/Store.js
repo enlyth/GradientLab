@@ -39,7 +39,7 @@ const Store = types
     reset: () => {
       /* I know this is a bit hacky, but has to do for now */
       const current = JSON.parse(JSON.stringify(self))
-      Object.assign(current, {...defaultStore, uiHidden: true, uiHiddenLocked: true, selected: 0})
+      Object.assign(current, {...defaultStore, uiHidden: true, uiHiddenLocked: true, selected: 0, outputCode: defaultCode})
       applySnapshot(self, current)
     },
     addGradient: () => {
