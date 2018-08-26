@@ -1,12 +1,10 @@
-  @import url('https://fonts.googleapis.com/css?family=Montserrat');
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html, body, #root, .App {
-
    display: flex;
-  flex-direction: column;
-  height: 100vh;
+    flex-direction: column;
+    height: 100vh;
     background-color: #333;
 }
 
@@ -26,7 +24,6 @@ html, body, #root, .App {
   color: #fff;
   user-select: none;
 }
-
 
 .header-top {
   background-color: #222;/* #3065ff;*/
@@ -51,7 +48,6 @@ button {
 
 button:hover {
   background-color: rgb(59, 110, 250);
-
 }
 
 button:focus {
@@ -124,14 +120,12 @@ input:focus {
   box-shadow: rgba(255, 255, 255, 1) 0px 0px 0px 2px !important;
 }
 
-
-/* Triangles */
-@keyframes example {
+@keyframes float {
   0% {top: -28px;}
   100% {top: -16px;}
 }
 
-@keyframes exe {
+@keyframes shrinkToNormal {
   0% {transform: scale(1.4)}
   100% {transform: scale(1)}
 }
@@ -141,7 +135,7 @@ input:focus {
   content:'';
   top: -24px;
   right: 11px;
-  animation: 1s infinite alternate example;
+  animation: 1s infinite alternate float;
   border-bottom: solid 12px transparent;
   border-right: solid 12px transparent;
   border-left: solid 12px transparent;
@@ -157,17 +151,9 @@ input:focus {
   border-right: solid 16px transparent;
   border-left: solid 16px transparent;
   border-top: solid 16px transparent;
-  animation-name: exe;
+  animation-name: shrinkToNormal;
   animation-duration: .2s;
   animation-iteration-count: 1;
-}
-
-svg {
-  fill: white;
-}
-
-.ui-toggler {
-  color: #fff;
 }
 
 
@@ -211,9 +197,7 @@ svg {
   background-color: #171717;
 }
 .container-controls {
-
   position: relative;
-
 }
 
 .controls {
@@ -233,7 +217,6 @@ code {
 }
 .header-controls {
   background-color: #333;
-
 }
 
 #contentBlock {
