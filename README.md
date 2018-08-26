@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://gradientlab.space/static/media/logo.fe963339.png" alt="Markdownify" width="200"></a>
+  <a href="https://gradientlab.space"><img src="https://gradientlab.space/static/media/logo.fe963339.png" alt="GradientLab" width="200"></a>
   <br>
   GradientLab
   <br>
