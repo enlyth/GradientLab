@@ -305,3 +305,11 @@ code {
   display: block;
   margin: 1em auto;
 }
+
+.colorCube {
+  width: .3em;
+  height: .3em;
+  padding: 1em;
+  margin: auto;
+  display: inline-block;
+}

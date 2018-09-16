@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { applySnapshot } from 'mobx-state-tree'
-import chroma from 'chroma-js'
 import { Router } from 'react-router'
 import { Route } from 'react-router-dom'
 import Header from './Components/Header'
@@ -43,18 +42,13 @@ class App extends Component {
   }
 
   render() {
-    
     const selected = store.selectedGradient
-    const linearGradient = chroma
-      .scale(selected.colors)
-      .mode(selected.mode)
-      .colors(selected.grades)
     const visibility =
       store.uiHidden || store.uiHiddenLocked ? 'hidden' : 'visible'
 
     return (
       <Router history={history}>
-        <div className="App" comment={'onMouseMove={this.handleMouseMove}'}>
+        <div className="App">
           <Header store={store} />
           <div className="container-controls">
             <Controls store={store} />
