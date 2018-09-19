@@ -8,11 +8,11 @@ const linearGradient = chroma
   .scale(selected.colors)
   .mode(selected.mode)
   .colors(selected.grades)
-
-const deg = selected.degrees.length === 0 ? '160' : selected.degrees
-const backgroundStyle = 'linear-gradient(' +
-  deg + 'deg,' + linearGradient.toString() + ');'
-return backgroundStyle`
+  
+  const deg = selected.degrees.length === 0 ? '160' : selected.degrees
+  const gradient = linearGradient.toString()
+  const backgroundStyle = \`linear-gradient($\{deg}deg,$\{gradient});\`
+  return backgroundStyle`
 
 const Store = types
   .model('Store', {
